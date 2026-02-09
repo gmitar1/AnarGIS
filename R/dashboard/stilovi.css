@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+      .zaglavlje-aplikacije {
+        background-color: #333333;
+        padding: 15px;
+        border-bottom: 3px solid #87cf3e;
+        margin-bottom: 20px; /* Optional: add spacing below */
+      }
+      
+      .naslov-aplikacije {
+        color: #A0F549;
+        margin: 0;
+        font-weight: bold;
+        text-align: center;
+        font-size: 28px; /* Add explicit size */
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      /* LAYOUT  */
+
+      body {
+        background-color: #666666;
+        margin: 0;
+        padding: 0;
+      }
+
+      .kontejner-dashboard {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      
+      .panel-mapa {
+        background-color: #333333;
+        padding: 20px;
+        border-bottom: 3px solid #87cf3e;
+        margin-bottom: 20px;
+      }
+      
+      .naslov-panela {
+        color: #A0F549;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      
+      .kontejner-mapa {
+          position: relative;
+          width: 100%;
+          padding-bottom: 150%; /* 2:3 aspect ratio (height:width) */
+          background-color: #222222;
+          overflow: hidden; /* Optional: prevent content overflow */
+        }
+        
+      .kontejner-mapa-unutrasnjost {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* SEKCIJE */
+      
+      .zaglavlje-sekcije {
+        color: #87cf3e !important;
+        background-color: #333333;
+        padding: 15px 20px;
+        border-left: 4px solid #87cf3e;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        border-radius: 0px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .naslov-sekcije {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+      }
+      
+      .stanica-info {
+        color: #CF3E63;
+        font-size: 13px;
+        font-weight: normal;
+        text-align: right;
+        margin: 0;
+      }
+      
+      .zaglavlje-sekcije-kvazduh {
+        border-left-color: #87cf3e;
+      }
+      
+      .zaglavlje-sekcije-pvode {
+        border-left-color: #87cf3e;
+      }
+      
+      .zaglavlje-sekcije-pdvode {
+        border-left-color: #87cf3e;
+      }
+      
+      
+      /* KARTICE  */
+      
+      .kartica-koordinate {
+        background-color: #222222;
+        border: 1px solid #87cf3e;
+        border-radius: 0px;
+        padding: 15px;
+        margin-bottom: 15px;
+        color: #CCCCCC;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      
+      .kartica-koordinate h5 {
+        color: #A0F549 !important;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      
+      .kontejner-grafikon {
+        background-color: #333333;
+        border-radius: 0px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border: 1px solid #87cf3e;
+      }
+      
+      .kontejner-grafikon:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+      
+      .kartica-tekst-centriran {
+        text-align: center;
+        font-size: 14px;
+      }
+      
+      /* OPŠTE */
+      .dugme {
+        background-color: #345018 !important;
+        border-color: #87cf3e !important;
+        color: white !important;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      .dugme:hover {
+        background-color: #44691F !important;
+        border-color: #A0F549 !important;
+      }
+      
+      .kontejner-dugme {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      h1, h2, h3, h4 {
+        color: #87cf3e !important;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: bold;
+      }
+      
+      @media (max-width: 768px) {
+      
+        .zaglavlje-aplikacije {
+           padding: 12px;
+        }
+          
+        .naslov-aplikacije {
+          font-size: 24px;
+        }
+        
+        .kontejner-dashboard {
+          max-width: 95%;
+        }
+        
+        .panel-mapa {
+          padding: 15px;
+        }
+        
+        .naslov-panela {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+        
+        .kontejner-mapa {
+          padding-bottom: 120%; /* Slightly different aspect on tablet */
+        }
+  
+        .kontejner-dugme {
+          margin: 15px 0;
+        }
+  
+        .kontejner-dugme .dugme {
+          padding: 10px;
+          font-size: 15px;
+        }
+              
+        .zaglavlje-sekcije {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 12px;
+        }
+        
+        .naslov-sekcije {
+          margin-bottom: 8px;
+        }
+        
+        .stanica-info {
+          text-align: left;
+          font-size: 12px;
+        }
+        
+        .kartica-koordinate {
+          font-size: 12px;
+          padding: 10px;
+        }
+        
+        .kontejner-grafikon {
+          padding: 10px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .kontejner-dashboard {
+          max-width: 100%;
+          padding: 0 10px;
+        }
+        
+        .naslov-panela {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        
+        .kontejner-mapa {
+          padding-bottom: 100%; /* Square-ish on mobile */
+        }
+  
+        .kontejner-dugme {
+          margin: 10px 0;
+        }
+  
+        .kontejner-dugme .dugme {
+          padding: 8px;
+          font-size: 14px;
+        }
+        
+        .zaglavlje-sekcije {
+          padding: 10px;
+        }
+        
+        .naslov-sekcije {
+          font-size: 16px;
+        }
+        
+        .stanica-info {
+          font-size: 11px;
+        }
+        
+        h1 {
+          font-size: 22px;
+        }
+        
+        .dugme {
+          padding: 8px;
+          font-size: 14px;
+        }
+      }

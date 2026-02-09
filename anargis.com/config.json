@@ -1,0 +1,78 @@
+{
+  "measurementTypes": {
+    "klima_merenja_dnevno": {
+      "name": "Klima - dnevno",
+      "stationFile": "klima_stanice_dnevno.json"
+    },
+    "klima_merenja_mesecno": {
+      "name": "Klima - mesečno", 
+      "stationFile": "klima_stanice_mesecno.json"
+    },
+    "kvazduh_merenja_dnevno": {
+      "name": "Kvazduh - dnevno",
+      "stationFile": "kvazduh_stanice.json"
+    },
+    "pdvode_merenja_dnevno": {
+      "name": "Podzemne vode - dnevno",
+      "stationFile": "pdvode_stanice.json"
+    },
+    "pvode_merenja_dnevno": {
+      "name": "Površinske vode - dnevno",
+      "stationFile": "pvode_stanice.json"
+    }
+  },
+  
+  "metrics": {
+    "klima_merenja_dnevno": [
+      "temperatura_max",
+      "temperatura_min", 
+      "temperatura_sr",
+      "pritisak_sr",    
+      "relativna_vlaznost_sr", 
+      "brzina_vetra_sr",
+      "insolacija",
+      "napon_vodene_pare_sr",
+      "oblacnost_sr",
+      "padavine",
+      "sneg_novo"
+      ,"sneg_ukupno"
+    ],
+    "klima_merenja_mesecno": [
+      "temperatura_max",
+      "temperatura_min", 
+      "temperatura_max2",
+      "temperatura_min2",
+      "pritisak_sr",    
+      "relativna_vlaznost_sr", 
+      "brzina_vetra_sr",
+      "vetar_gt_6b",
+      "vetar_gt_8b",
+      "insolacija",
+      "napon_vodene_pare_sr",
+      "oblacnost_sr",
+      "padavine_suma",
+      "padavine_max",
+      "sneg_novo",
+      "br_dana_kisa",
+      "br_dana_sneg",
+      "br_dana_magla"
+    ],
+    "kvazduh_merenja_dnevno": [
+      "pm10",
+      "pm25", 
+      "so2",
+      "no2",
+      "o3",
+      "co"
+    ],
+    "pdvode_merenja_dnevno": [
+      "nivo",
+      "temperatura"
+    ],
+    "pvode_merenja_dnevno": [
+      "nivo",
+      "protok",
+      "temperatura"
+    ]
+  }
+}

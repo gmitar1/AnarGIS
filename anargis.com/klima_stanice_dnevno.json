@@ -1,0 +1,8 @@
+[
+    {"id":"600001", "naziv":"Beograd", "nadmorska_visina":132, "geografska_sirina":44.8, "geografska_duzina":20.47},
+    {"id":"600002", "naziv":"Zlatibor", "nadmorska_visina":1029, "geografska_sirina":43.73, "geografska_duzina":19.72},
+    {"id":"600004", "naziv":"Novi Sad", "nadmorska_visina":86, "geografska_sirina":45.32, "geografska_duzina":19.83},
+    {"id":"600005", "naziv":"Vranje", "nadmorska_visina":433, "geografska_sirina":42.55, "geografska_duzina":21.92},
+    {"id":"600006", "naziv":"Loznica", "nadmorska_visina":121, "geografska_sirina":44.53, "geografska_duzina":19.23},
+    {"id":"600007", "naziv":"Niš", "nadmorska_visina":202, "geografska_sirina":43.33, "geografska_duzina":21.9}
+]

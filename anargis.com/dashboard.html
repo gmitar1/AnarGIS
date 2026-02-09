@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interaktivni dashboard za vizuelizaciju podataka iz AnarGIS baze.">
+    <meta property="og:title" content="AnarGIS Dashboard | Interaktivne vizuelizacije">
+    <meta property="og:description" content="Interaktivni dashboard za vizuelizaciju podataka iz AnarGIS baze.">
+    <meta property="og:image" content="https://anargis.com/img/og-img.jpg">
+    <meta property="og:url" content="https://anargis.com/dashboard.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sr_RS">
+    <title>AnarGIS Dashboard</title>
+    <style>
+        body { 
+            background: #222; 
+            color: #87cf3e; 
+            font-family: monospace; 
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 50%;
+            max-width: 800px;
+        }
+        .filter { 
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            gap: 10px; /* Replace margin-left on button */
+            width: 100%;
+        }
+
+        select { 
+            background: #333; 
+            color: #fff; 
+            border: 1px solid #87cf3e; 
+            padding: 8px; 
+            font-family: monospace;
+            flex: 1; /* Allow dropdowns to grow */
+            min-width: 0; /* Allow shrinking */
+        }
+
+        button { 
+            background: #333; 
+            color: #fff; 
+            border: 1px solid #87cf3e; 
+            padding: 8px; 
+            font-family: monospace;
+            white-space: nowrap; /* Prevent button text from wrapping */
+            flex-shrink: 0; /* Don't let button shrink */
+        }
+
+        /* Remove the margin-left from button since we're using gap */
+        button { margin-left: 0; }
+        .chart { background: #333; border: 1px solid #87cf3e; margin: 20px 0; padding: 15px; }
+        img { width: 100%; border: 1px solid #345018; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AnarGIS Dashboard</h1>
+        
+        <p>Više o AnarGIS projektu saznajte na <a href="https://anargis.com/" style="color: #87cf3e"; target="_blank">anargis.com</a>.</p>
+
+        <div class="filter">
+            <select id="type">
+                <option>Izaberi tip...</option>
+            </select>
+            
+            <select id="station" disabled>
+                <option>Izaberi stanicu...</option>
+            </select>
+            
+            <button onclick="load()">Prikaži</button>
+        </div>
+        
+        <div id="charts"></div>
+    </div>
+
+    <script>
+        let config = {};
+        
+        // Load config
+        fetch('config.json')
+            .then(r => r.json())
+            .then(data => {
+                config = data;
+                let html = '<option>Izaberi tip...</option>';
+                for(let key in config.measurementTypes) {
+                    html += `<option value="${key}">${config.measurementTypes[key].name}</option>`;
+                }
+                document.getElementById('type').innerHTML = html;
+            })
+            .catch(e => console.log('Greška:', e));
+        
+        // When type changes, load stations
+        document.getElementById('type').onchange = async function() {
+            const type = this.value;
+            if(!type) return;
+            
+            const file = config.measurementTypes[type].stationFile;
+            const stations = await (await fetch(file)).json();
+            
+            let html = '<option>Izaberi stanicu...</option>';
+            
+            // Sort differently based on measurement type
+            if (type.includes('pvode') || type.includes('pdvode')) {
+                // For pvode/pdvode: sort by river/telo first, then by station name
+                stations.sort((a, b) => {
+                    // Get the sorting key (river or telo)
+                    const aKey = a.reka || a.telo || '';
+                    const bKey = b.reka || b.telo || '';
+                    
+                    // First compare by river/telo
+                    if (aKey < bKey) return -1;
+                    if (aKey > bKey) return 1;
+                    
+                    // If same river/telo, sort by station name
+                    return a.naziv.localeCompare(b.naziv);
+                });
+            } else {
+                // For other types: sort by station name only
+                stations.sort((a, b) => a.naziv.localeCompare(b.naziv));
+            }
+            
+            stations.forEach(s => {
+                // Add river or telo info to dropdown for pvode and pdvode
+                let extraInfo = '';
+                if (type.includes('pvode') || type.includes('pdvode')) {
+                    if (s.reka) {
+                        extraInfo = ` (${s.reka})`;
+                    } else if (s.telo) {
+                        extraInfo = ` (${s.telo})`;
+                    }
+                }
+                html += `<option value="${s.id}">${s.naziv}${extraInfo}</option>`;
+            });
+            
+            document.getElementById('station').innerHTML = html;
+            document.getElementById('station').disabled = false;
+        };
+        
+        // Load charts and station summary
+        function load() {
+            const type = document.getElementById('type').value;
+            const station = document.getElementById('station').value;
+            if(!type || !station) return alert('Izaberi tip i stanicu');
+            
+            // First load station data to show summary
+            const stationFile = config.measurementTypes[type].stationFile;
+            fetch(stationFile)
+                .then(r => r.json())
+                .then(stations => {
+                    const stationData = stations.find(s => s.id === station);
+                    let html = '';
+                    
+                    // Station summary section
+                    if (stationData) {
+                        html += `<div class="station-summary" style="background: #333; border: 1px solid #87cf3e; padding: 15px; margin: 20px 0; color: #87cf3e; font-family: monospace;">
+                            <h3 style="margin-top: 0; color: #87cf3e;">Informacije o stanici</h3>`;
+                        
+                        // Show available properties based on station type
+                        html += `<p><strong>ID:</strong> ${stationData.id}</p>`; // Added ID here
+                        html += `<p><strong>Naziv:</strong> ${stationData.naziv}</p>`;
+                        
+                        if (stationData.reka) {
+                            html += `<p><strong>Reka:</strong> ${stationData.reka}</p>`;
+                        }
+                        if (stationData.telo) {
+                            html += `<p><strong>Telo:</strong> ${stationData.telo}</p>`;
+                        }
+                        if (stationData.nadmorska_visina) {
+                            html += `<p><strong>Nadmorska visina:</strong> ${stationData.nadmorska_visina} m</p>`;
+                        }
+                        
+                        // Always show coordinates if available
+                        if (stationData.geografska_sirina && stationData.geografska_duzina) {
+                            html += `<p><strong>Koordinate:</strong> ${stationData.geografska_sirina}° N, ${stationData.geografska_duzina}° E</p>`;
+                        }
+                        
+                        html += `</div>`;
+                    }
+                    
+                    // Now load the charts
+                    const metrics = config.metrics[type] || [];
+                    
+                    metrics.forEach(metric => {
+                        const file = `${type}_${station}_${metric}.png`;
+                        const path = `img/grafici/${type}/${file}`;
+                        
+                        html += `
+                        <div class="chart">
+                            <img src="${path}" alt="${metric}" onerror="this.parentNode.innerHTML='<p>Nema: ${file}</p>';">
+                        </div>`;
+                    });
+                    
+                    document.getElementById('charts').innerHTML = html || '<p>Nema grafova</p>';
+                })
+                .catch(e => {
+                    console.log('Greška pri učitavanju stanice:', e);
+                    document.getElementById('charts').innerHTML = '<p>Greška pri učitavanju podataka o stanici</p>';
+                });
+        }
+    </script>
+</body>
+</html>

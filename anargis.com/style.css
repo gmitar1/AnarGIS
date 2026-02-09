@@ -1,0 +1,949 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Noto Sans', 'Ubuntu', 'DejaVu Sans', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+}
+
+/* Top Panel Styles */
+.top-panel {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.top-panel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: #3aa655; /* Open source green */
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #f0f0f0;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 18px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.nav-menu a:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #444;
+}
+
+.nav-menu a.active {
+    background-color: #2a2a2a;
+    color: #3aa655;
+    border: 1px solid #444;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu i {
+    margin-right: 8px;
+    width: 18px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e1e4e8;
+    margin-top: 20px;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.centered-title {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Content Sections */
+.content-section {
+    background: #fafafa;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    border-left: 4px solid #3aa655;
+    border: 1px solid #eaeaea;
+    transition: all 0.2s ease;
+}
+
+.content-section:hover {
+    border-color: #ccc;
+    background: #f8f9fa;
+}
+
+.content-section h2 {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.content-section h2 i {
+    margin-right: 10px;
+    color: #3aa655;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.content-section ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    background: #fafafa;
+    border-radius: 6px;
+}
+
+/* Wiki page specific styles */
+.wiki-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.category-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    transition: all 0.2s ease;
+}
+
+.category-card:hover {
+    background: #f0f2f5;
+    border-color: #ccc;
+    transform: translateY(-2px);
+}
+
+.category-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.category-card h3 i {
+    margin-right: 8px;
+    color: #3aa655;
+}
+
+/* Download page specific styles */
+.download-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.download-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #eaeaea;
+    transition: all 0.2s ease;
+}
+
+.download-card:hover {
+    border-color: #3aa655;
+    background: #f0f9f3;
+}
+
+.download-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.download-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    background: #3aa655;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.download-button:hover {
+    background: #2e8b47;
+}
+
+.download-button i {
+    margin-right: 8px;
+}
+
+/* Kontakt page specific styles */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
+
+.contact-item i {
+    font-size: 1.4rem;
+    color: #3aa655;
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+.contact-item h3 {
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.contact-item p {
+    color: #444;
+}
+
+.contact-item a {
+    color: #3aa655;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #2e8b47;
+    text-decoration: underline;
+}
+
+/* Footer at the bottom of the page */
+.page-footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 1px solid #eaeaea;
+}
+
+/* Code-like elements for open-source feel */
+.code-block {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    background: #f6f8fa;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #24292e;
+    overflow-x: auto;
+}
+
+/* Versions Table Styles */
+.versions-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+}
+
+.versions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.versions-table thead {
+    background: #f8f9fa;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.versions-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a1a;
+    border-right: 1px solid #eaeaea;
+}
+
+.versions-table th:last-child {
+    border-right: none;
+}
+
+.versions-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #f0f0f0;
+    color: #444;
+}
+
+.versions-table td:last-child {
+    border-right: none;
+}
+
+.versions-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.versions-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.versions-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-download-link {
+    display: inline-block;
+    background: #3aa655;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+}
+
+.table-download-link:hover {
+    background: #2e8b47;
+}
+
+.table-download-link i {
+    margin-right: 5px;
+}
+
+/* Make the version number stand out */
+.versions-table td:first-child {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Images */
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  
+  /* Border properties */
+  border: 1px solid #444; /* Your theme color */
+  border-radius: 4px; /* Optional rounded corners */
+}
+
+/* Responsive styles */
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .versions-table {
+        font-size: 0.9rem;
+    }
+    
+    .versions-table th,
+    .versions-table td {
+        padding: 10px 8px;
+    }
+    
+    .table-download-link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .versions-table th,
+    .versions-table td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
+    }
+    
+    .table-download-link {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-panel-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .nav-menu a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .centered-title {
+        font-size: 1.8rem;
+    }
+    
+    .content-wrapper {
+        padding: 20px;
+    }
+    
+    .main-content {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        justify-content: center;
+        padding: 10px;
+    }
+    
+    .wiki-categories,
+    .download-items,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Wiki Layout Styles */
+.wiki-layout .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.wiki-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Wiki Sidebar */
+.wiki-sidebar {
+    flex: 0 0 240px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.toc-container {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.toc-container h3 {
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-nav li {
+    margin-bottom: 12px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    padding-left: 5px;
+}
+
+.toc-nav li:hover {
+    border-left-color: #3aa655;
+}
+
+.toc-nav li.active {
+    border-left-color: #3aa655;
+    background: #f0f9f3;
+}
+
+.toc-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.toc-nav a:hover {
+    background: #f0f2f5;
+    color: #1a1a1a;
+}
+
+.toc-nav i {
+    color: #3aa655;
+    width: 18px;
+    font-size: 0.9rem;
+}
+
+.sidebar-note {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eaeaea;
+}
+
+.sidebar-note h4 {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #3aa655;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #f0f9f3;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+    border: 1px solid #d4eeda;
+}
+
+.sidebar-link:hover {
+    background: #e6f4ea;
+    border-color: #3aa655;
+}
+
+/* Wiki Content */
+.wiki-content {
+    flex: 1;
+    min-width: 0; /* Prevents flexbox overflow */
+}
+
+.doc-section {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+#quick-start,
+#data-structure,
+#database-guide,
+#tabele-meteorologija,
+#tabele-povrsinske-vode,
+#tabele-podzemne-vode,
+#tabele-kvalitet-vazduha,
+#tabele-kvalitet-vode,
+#tabele-polen,
+#tabele-zagadjenje,
+#slojevi-opsti,
+#slojevi-povrsinske-vode,
+#slojevi-slivovi,
+#slojevi-podzemne-vode,
+#slojevi-podloge {
+    scroll-margin-top: 100px;
+}
+
+.doc-section h2 {
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.doc-section h2 i {
+    color: #3aa655;
+}
+
+.doc-section h3 {
+    color: #1a1a1a;
+    margin: 25px 0 15px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.doc-section h4 {
+    color: #1a1a1a;
+    margin: 20px 0 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.doc-section p, .doc-section li {
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Info and Warning Boxes */
+.info-box, .warning-box {
+    padding: 20px;
+    border-radius: 6px;
+    margin: 25px 0;
+    border-left: 4px solid;
+}
+
+.info-box {
+    background: #f0f9f3;
+    border-left-color: #3aa655;
+    border: 1px solid #d4eeda;
+}
+
+.warning-box {
+    background: #fff8e6;
+    border-left-color: #ffc107;
+    border: 1px solid #ffeaa7;
+}
+
+.info-box h4, .warning-box h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Tool Options */
+.tool-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.tool-option {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+}
+
+.tool-option h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.tool-option ol, .tool-option ul {
+    margin-left: 20px;
+}
+
+.tool-option li {
+    margin-bottom: 8px;
+}
+
+/* Tutorial Steps */
+.tutorial-step {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+    border-left: 4px solid #3aa655;
+}
+
+.tutorial-step h4 {
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Data Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 25px 0;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.data-table thead {
+    background: #f8f9fa;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.data-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a1a;
+    border-right: 1px solid #eaeaea;
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    color: #444;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.data-table code {
+    background: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    color: #f8f9fa;
+}
+
+/* FAQ */
+.faq-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #eaeaea;
+}
+
+.faq-item h3 {
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+}
+
+/* Code Blocks */
+
+.code-block {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+    overflow-x: auto;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.code-comment {
+    color: #6a9955;
+}
+
+.code-keyword {
+    color: #569cd6;
+}
+
+.code-string {
+    color: #ce9178;
+}
+
+/* Documentation Footer */
+.doc-footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    background: #fafafa;
+    border-radius: 6px;
+}
+
+.doc-footer i {
+    color: #3aa655;
+    margin-right: 8px;
+}
+
+/* Responsive Wiki Layout */
+@media (max-width: 1024px) {
+    .wiki-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .wiki-sidebar {
+        flex: none;
+        width: 100%;
+        position: static;
+        max-height: none;
+    }
+    
+    .toc-container {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .doc-section {
+        padding: 20px;
+    }
+    
+    .wiki-layout .content-wrapper {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wiki-container {
+        gap: 20px;
+    }
+    
+    .doc-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .code-block {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+}

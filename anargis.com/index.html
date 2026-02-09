@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AnarGIS - Open Data GIS projekat za Republiku Srbiju. Objedinjena baza podataka iz oblasti životne sredine u GIS formatu sa meteorološkim, hidrološkim i podacima o kvalitetu životne sredine.">
+    <meta property="og:title" content="AnarGIS | Open Data GIS projekat za Srbiju">
+    <meta property="og:description" content="AnarGIS - Open Data GIS projekat za Republiku Srbiju. Objedinjena baza podataka iz oblasti životne sredine u GIS formatu sa meteorološkim, hidrološkim i podacima o kvalitetu životne sredine.">
+    <meta property="og:image" content="https://anargis.com/img/og-img.jpg">
+    <meta property="og:url" content="https://anargis.com/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sr_RS">
+    <title>AnarGIS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Panel Navigation -->
+    <header class="top-panel">
+        <div class="top-panel-container">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <h2>AnarGIS</h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Početna</a></li>
+                    <li><a href="wiki.html"><i class="fa-solid fa-book"></i> Wiki</a></li>
+                    <li><a href="download.html"><i class="fas fa-download"></i> Download</a></li>
+                    <li><a href="dashboard.html" target="_blank"><i class="fa-solid fa-layer-group"></i> Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-wrapper">
+            <header class="main-header">
+                <h1 class="centered-title">Dobrodošli na AnarGIS</h1>
+            </header>
+
+            <main>
+                <section class="content-section">
+                    <h2>O projektu</h2>
+                    <p>AnarGIS je objedinjena baza podataka iz oblasti očuvanja životne sredine koja je za teritoriju Republike Srbije pripremljena u kartografskom GIS formatu.</p>
+                    
+                    <p>Osnovna ideja je olakšavanje pristupa podacima koji se često zajedno koriste sakupljanjem u jedinstvenu bazu podataka, uz dodatno čišćenje i standardizovanje kako bi format bio što upotrebljiviji.
+                    Svi podaci koji se nalaze u AnarGIS-u preuzeti su od zvaničnih izvora poput republičkih zavoda, agencija i sl. ili su otvorenog tipa i potiču od drugih open-source/community projekata.</p>
+                        
+                    <p>Projekat u svojoj srži podržava open-data i open-source ideologije i samim tim pruža celokupnu bazu na raspolaganje bilo za ličnu, obrazovnu ili komercijalnu upotrebu.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>Sadržaj</h2>
+                    
+                    <p>Za detaljan pregled svih podataka i za način upotrebe posetite <a href="wiki.html" style="color: #3aa655"; target="_blank">Wiki stranicu</a>. Ukratko, podaci koji se mogu pronaći u AnarGIS projektu su:
+                    <ul>
+                        <li>Dnevni i mesečni meteorološki i klimatološki parametri za period 2000-2024 (izvor: <a href="https://www.hidmet.gov.rs/latin/meteorologija/op_bilteni.php" target="_blank" rel="noopener" style="color: #3aa655";>dnevni bilteni</a> i <a href="https://www.hidmet.gov.rs/latin/meteorologija/klimatologija_godisnjaci.php" style="color: #3aa655">godišnji izveštaji RHMZ-a</a>)</li>
+                        <li>Dnevni hidrološki parametri površinskih voda za period 2005-2024 (izvor: <a href="https://www.hidmet.gov.rs/latin/hidrologija/povrsinske_godisnjaci.php" target="_blank" rel="noopener" style="color: #3aa655">godišnji izveštaji RHMZ-a</a>)</li>
+                        <li>Dnevni hidrološki parametri podzemnih voda za period 2020-2024 (izvor: <a href="https://www.hidmet.gov.rs/latin/hidrologija/podzemne/podzemne_godisnjaci.php" target="_blank" rel="noopener" style="color: #3aa655">godišnji izveštaji RHMZ-a</a>)</li>
+                        <li>Mesečni parametri kvaliteta površinskih voda za period 2012-2023 (izvor: <a href="https://data.gov.rs/sr/datasets/kvalitet-voda-1/" target="_blank" rel="noopener" style="color: #3aa655">SEPA, portal otvorenih podataka</a>)</li>
+                        <li>Dnevni parametri kvaliteta vazduha za period 2011-2023 (izvor: <a href="https://data.gov.rs/sr/datasets/kvalitet-vazdukha/" target="_blank" rel="noopener" style="color: #3aa655">SEPA, portal otvorenih podataka</a>)</li>
+                        <li>Dnevni parametri koncentracija polenskih alergena za period 2016-2025 (izvor: <a href="https://data.gov.rs/sr/datasets/polen-objedinjeni-podatsi-od-2016-godine/" target="_blank" rel="noopener" style="color: #3aa655">SEPA, portal otvorenih podataka</a>)</li>
+                        <li>Najveći zagađivači po tipu zagađenja životne sredine 2011-2023 (izvor: <a href="https://data.gov.rs/sr/datasets/izvor-zagadjivanja/" target="_blank" rel="noopener" style="color: #3aa655">SEPA, NRIZ, portal otvorenih podataka</a>)</li>
+                    </ul>
+                    </p>
+                    
+                    <img src="img/klima_merenja_osnovno_primer.jpg" alt="Primer tabele klimatskih merenja u AnarGIS bazi: temperatura, pritisak, padavine 2000-2024" class="responsive-image">
+                    <p><i>(Primer jedne tabele)</i></p>
+
+
+                    <p>Radi lakše upotrebe takođe su prikupljena neke inženjerske podloge pogodne za detaljnije analize, poput:
+                    <ul>
+                        <li>Mreža osmatračkog sistema za sve tipove merenih stanica od iznad</li>
+                        <li>Hidrološka mreža slivnih područja površinskih voda (izvor: <a href="https://www.hidmet.gov.rs/ciril/hidrologija/povrsinske/index.php" target="_blank" rel="noopener" style="color: #3aa655">RHMZ</a>)</li>
+                        <li>Hidrološka mreža podzemnih voda (izvor: <a href="https://www.hidmet.gov.rs/ciril/hidrologija/podzemne/naslovna.php" target="_blank" rel="noopener" style="color: #3aa655">RHMZ</a>)</li>
+                        <li>Hidrološka mreža reka, potoka i kanala (izvor: <a href="https://download.geofabrik.de/europe/serbia.html" target="_blank" rel="noopener" style="color: #3aa655">Geofabrik, OSM</a>)</li>
+                        <li>Hidrogeološka podloga (izvor: <a href="https://geoliss.mre.gov.rs/prez/geolAtlas/karte/12_hidrogeo.htm" target="_blank" rel="noopener" style="color: #3aa655">Geološki informacioni sistem Srbije</a>)</li>
+                        <li>Karta tipa zemljišta - pedološka podloga (izvor: <a href="https://esdac.jrc.ec.europa.eu/content/soil-map-serbia-pedoloska-karta-jugoslavije" target="_blank" rel="noopener" style="color: #3aa655">Pedološka karta Jugoslavije, A. Škorić, M. Bogunović</a>)</li>
+                        <li>Karta upotrebe zemljišta (izvor: <a href="https://land.copernicus.eu/en/products/corine-land-cover/clc2018" target="_blank" rel="noopener" style="color: #3aa655">Copernicus</a>)</li>
+                    </ul>
+                    </p>
+
+                    <img src="img/podloge_primer.jpg" alt="GIS podloge u AnarGIS projektu: hidrološka mreža, tipovi zemljišta i upotreba zemljišta za Srbiju" class="responsive-image">
+                    <p><i>(Primer kako izgledaju podloge)</i></p>
+
+                    <p>Sadržaj projekta će se vremenom ažurirati, svežiji podaci će biti ubačeni kako postanu dostupni a takođe je u planu i proširenje sa skroz novim tipovima podataka pa se preporučuje povremeno posećivanje <a href="download.html" style="color: #3aa655"; target="_blank">Download stranice</a> za preuzimanje novih verzija.</p>
+                </section>
+            </main>
+
+            <footer class="main-footer">
+                <p>Hvala na poseti, svi predlozi su dobrodošli.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Licenca: CC0 · Open Data</p>
+                
+                <!-- Contact info in footer -->
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eaeaea;">
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; color: #666;">Kontakt</p>
+                    <div style="display: flex; justify-content: center; gap: 20px;">
+                        <a href="mailto:anargis@proton.me" target="_blank" rel="noopener" style="color: #3aa655; text-decoration: none;">
+                            <i class="fa fa-envelope"></i> anargis@proton.me
+                        </a>
+                        <a href="https://www.linkedin.com/in/gmitar/" target="_blank" rel="noopener" target="_blank" style="color: #3aa655; text-decoration: none;">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/gmitar1" target="_blank" rel="noopener" style="color: #3aa655; text-decoration: none;">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <div class="page-footer">
+            <p>© 2026 AnarGIS · Open Data GIS projekat</p>
+        </div>
+    </div>
+</body>
+</html>
